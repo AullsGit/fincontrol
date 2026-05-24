@@ -2,7 +2,7 @@ import '../modelos/dica.dart';
 import '../modelos/gasto.dart';
 
 class DicasServ {
-  /// Retorna dicas personalizadas baseadas nos hábitos do utilizador
+ 
   List<Dica> obterDicasPersonalizadas(List<Gasto> gastos) {
     final dicas = List<Dica>.from(dicasPadrao);
 
@@ -18,7 +18,7 @@ class DicasServ {
 
     final List<Dica> personalizadas = [];
 
-    // Alerta se gastos > 80% do rendimento
+   
     if (totalRendimentos > 0 && totalDespesas / totalRendimentos > 0.8) {
       personalizadas.add(const Dica(
         id: 'custom_1',
@@ -30,7 +30,7 @@ class DicasServ {
       ));
     }
 
-    // Verifica categoria dominante
+  
     final Map<String, double> porCategoria = {};
     for (final g in despesas) {
       porCategoria[g.categoria] =
