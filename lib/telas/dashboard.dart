@@ -31,14 +31,14 @@ class _DashboardState extends ConsumerState<Dashboard> {
   @override
   void initState() {
     super.initState();
-    // Iniciar sincronização ao abrir o app
+  
     Future.microtask(
             () => ref.read(sincronizacaoNotifierProvider.notifier).sincronizar());
   }
 
   @override
   Widget build(BuildContext context) {
-    // Escuta mudanças de autenticação
+ 
     ref.listen(authStateProvider, (_, next) {
       next.whenData((user) {
         if (user == null && mounted) {
@@ -57,7 +57,7 @@ class _DashboardState extends ConsumerState<Dashboard> {
     return Scaffold(
       body: Column(
         children: [
-          // Banner offline
+         
           if (!temInternet)
             Container(
               width: double.infinity,
@@ -73,7 +73,7 @@ class _DashboardState extends ConsumerState<Dashboard> {
                 ],
               ),
             ),
-          // Indicador sincronizando
+        
           if (estaSincronizando && temInternet)
             Container(
               width: double.infinity,
