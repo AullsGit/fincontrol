@@ -6,7 +6,7 @@ import '../servicos/sincronizacao_serv.dart';
 import '../servico_local/base_dados_serv.dart';
 import 'autenticacao_provider.dart';
 
-// ================= SERVICES =================
+
 
 final firestoreServProvider =
 Provider<FirestoreServ>((ref) => FirestoreServ());
@@ -15,7 +15,7 @@ final sincronizacaoServProvider =
 Provider<SincronizacaoServ>((ref) => SincronizacaoServ());
 
 
-// ================= FILTRO MÊS =================
+
 
 final mesSelecionadoProvider = StateProvider<DateTime>((ref) {
   final now = DateTime.now();
@@ -23,7 +23,7 @@ final mesSelecionadoProvider = StateProvider<DateTime>((ref) {
 });
 
 
-// ================= FIREBASE STREAM =================
+
 
 final gastosStreamProvider = StreamProvider<List<Gasto>>((ref) {
   final auth = ref.watch(authStateProvider);
@@ -44,7 +44,7 @@ final gastosStreamProvider = StreamProvider<List<Gasto>>((ref) {
 });
 
 
-// ================= GASTOS LOCAIS DO MÊS =================
+
 
 final gastosMesProvider = Provider<List<Gasto>>((ref) {
   final auth = ref.watch(authStateProvider);
@@ -65,7 +65,7 @@ final gastosMesProvider = Provider<List<Gasto>>((ref) {
 });
 
 
-// ================= ESTATÍSTICAS =================
+
 
 final estatisticasMesProvider =
 Provider<Map<String, double>>((ref) {
@@ -91,7 +91,7 @@ Provider<Map<String, double>>((ref) {
 });
 
 
-// ================= DESPESAS POR CATEGORIA =================
+
 
 final despesasPorCategoriaProvider =
 Provider<Map<String, double>>((ref) {
@@ -115,7 +115,7 @@ Provider<Map<String, double>>((ref) {
 });
 
 
-// ================= CRUD GASTOS =================
+
 
 class GastosNotifier
     extends StateNotifier<AsyncValue<void>> {
@@ -198,7 +198,7 @@ class GastosNotifier
 }
 
 
-// ================= PROVIDER =================
+
 
 final gastosNotifierProvider =
 StateNotifierProvider<
