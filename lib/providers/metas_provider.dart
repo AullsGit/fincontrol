@@ -7,7 +7,6 @@ import '../servicos/firestore_serv.dart';
 import 'autenticacao_provider.dart';
 import 'gastos_provider.dart';
 
-// Stream de metas do Firebase
 final metasStreamProvider = StreamProvider<List<Meta>>((ref) {
   final auth = ref.watch(authStateProvider);
   return auth.when(
@@ -20,7 +19,7 @@ final metasStreamProvider = StreamProvider<List<Meta>>((ref) {
   );
 });
 
-// Metas locais
+
 final metasLocalProvider = Provider<List<Meta>>((ref) {
   final auth = ref.watch(authStateProvider);
   return auth.when(
@@ -33,7 +32,7 @@ final metasLocalProvider = Provider<List<Meta>>((ref) {
   );
 });
 
-// Metas notifier
+
 class MetasNotifier extends StateNotifier<AsyncValue<void>> {
   final Ref _ref;
 
