@@ -13,7 +13,7 @@ class BaseDeDadosServ {
     _metasBox = await Hive.openBox<Meta>(AppConstants.metasBox);
   }
 
-  // ========== GASTOS ==========
+
   static Future<void> salvarGasto(Gasto gasto) async {
     await _gastosBox.put(gasto.id, gasto);
   }
@@ -40,7 +40,7 @@ class BaseDeDadosServ {
       ..sort((a, b) => b.data.compareTo(a.data));
   }
 
-  // ========== METAS ==========
+  
   static Future<void> salvarMeta(Meta meta) async {
     await _metasBox.put(meta.id, meta);
   }
