@@ -7,7 +7,6 @@ import '../modelos/meta.dart';
 class FirestoreServ {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  // ===================== GASTOS =====================
 
   Future<void> adicionarGasto(Gasto gasto) async {
     await _db
@@ -55,7 +54,7 @@ class FirestoreServ {
     return snap.docs.map((d) => Gasto.fromMap(d.data())).toList();
   }
 
-  // ===================== METAS =====================
+ 
 
   Future<void> adicionarMeta(Meta meta) async {
     await _db
@@ -95,7 +94,7 @@ class FirestoreServ {
         snap.docs.map((d) => Meta.fromMap(d.data())).toList());
   }
 
-  // ===================== SYNC =====================
+  
 
   Future<void> sincronizarGastosPendentes(
       String uid, List<Gasto> gastos) async {
