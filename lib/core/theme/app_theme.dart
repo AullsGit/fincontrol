@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // FinControl Brand Colors
+  
   static const Color primaryBlue = Color(0xFF1A3A6B);
   static const Color accentBlue = Color(0xFF2563EB);
   static const Color goldAccent = Color(0xFFF59E0B);
